@@ -1,0 +1,10 @@
+C:\Users\u\source\repos\WordTown\bin\Debug\WordTown.exe.config
+C:\Users\u\source\repos\WordTown\bin\Debug\WordTown.exe
+C:\Users\u\source\repos\WordTown\bin\Debug\WordTown.pdb
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.csproj.AssemblyReference.cache
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.WordTown_MainMenu.resources
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.Properties.Resources.resources
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.csproj.GenerateResource.cache
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.csproj.CoreCompileInputs.cache
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.exe
+C:\Users\u\source\repos\WordTown\obj\Debug\WordTown.pdb
