@@ -125,5 +125,8 @@
   <ItemGroup>
     <None Include="Resources\WordTown_SubmitAnswerIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WordTown_StartIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -203,6 +203,16 @@ namespace WordTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WordTown_StartIcon {
+            get {
+                object obj = ResourceManager.GetObject("WordTown_StartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WordTown_SubmitAnswerIcon {
             get {
                 object obj = ResourceManager.GetObject("WordTown_SubmitAnswerIcon", resourceCulture);

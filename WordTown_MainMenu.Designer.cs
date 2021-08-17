@@ -29,6 +29,7 @@ namespace WordTown
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Top_Border = new System.Windows.Forms.Panel();
             this.Bottom_Border = new System.Windows.Forms.Panel();
             this.Left_Border = new System.Windows.Forms.Panel();
@@ -37,10 +38,12 @@ namespace WordTown
             this.Container_Panel = new System.Windows.Forms.Panel();
             this.EnglishWord_TextBox = new System.Windows.Forms.TextBox();
             this.TurkishWord_TextBox = new System.Windows.Forms.TextBox();
-            this.SubmitAnswer_Button = new System.Windows.Forms.Button();
-            this.IDontKnowAnswer_Button = new System.Windows.Forms.Button();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.FirstDigit_PictureBox = new System.Windows.Forms.PictureBox();
             this.SecondDigit_PictureBox = new System.Windows.Forms.PictureBox();
+            this.StartGame_Button = new System.Windows.Forms.Button();
+            this.IDontKnowAnswer_Button = new System.Windows.Forms.Button();
+            this.SubmitAnswer_Button = new System.Windows.Forms.Button();
             this.Exit_Button = new System.Windows.Forms.Button();
             this.Header_PictureBox = new System.Windows.Forms.PictureBox();
             this.Mid_Panel.SuspendLayout();
@@ -102,6 +105,7 @@ namespace WordTown
             // 
             // Container_Panel
             // 
+            this.Container_Panel.Controls.Add(this.StartGame_Button);
             this.Container_Panel.Controls.Add(this.IDontKnowAnswer_Button);
             this.Container_Panel.Controls.Add(this.SubmitAnswer_Button);
             this.Container_Panel.Controls.Add(this.TurkishWord_TextBox);
@@ -134,42 +138,6 @@ namespace WordTown
             this.TurkishWord_TextBox.TabIndex = 1;
             this.TurkishWord_TextBox.Text = "  Turkish Word:";
             // 
-            // SubmitAnswer_Button
-            // 
-            this.SubmitAnswer_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
-            this.SubmitAnswer_Button.FlatAppearance.BorderSize = 0;
-            this.SubmitAnswer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SubmitAnswer_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SubmitAnswer_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
-            this.SubmitAnswer_Button.Image = global::WordTown.Properties.Resources.WordTown_SubmitAnswerIcon;
-            this.SubmitAnswer_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SubmitAnswer_Button.Location = new System.Drawing.Point(33, 142);
-            this.SubmitAnswer_Button.Name = "SubmitAnswer_Button";
-            this.SubmitAnswer_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.SubmitAnswer_Button.Size = new System.Drawing.Size(360, 34);
-            this.SubmitAnswer_Button.TabIndex = 2;
-            this.SubmitAnswer_Button.Text = "Submit Answer";
-            this.SubmitAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SubmitAnswer_Button.UseVisualStyleBackColor = false;
-            // 
-            // IDontKnowAnswer_Button
-            // 
-            this.IDontKnowAnswer_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
-            this.IDontKnowAnswer_Button.FlatAppearance.BorderSize = 0;
-            this.IDontKnowAnswer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IDontKnowAnswer_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.IDontKnowAnswer_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
-            this.IDontKnowAnswer_Button.Image = global::WordTown.Properties.Resources.WordTown_IDontKnowIcon;
-            this.IDontKnowAnswer_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.IDontKnowAnswer_Button.Location = new System.Drawing.Point(403, 142);
-            this.IDontKnowAnswer_Button.Name = "IDontKnowAnswer_Button";
-            this.IDontKnowAnswer_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.IDontKnowAnswer_Button.Size = new System.Drawing.Size(360, 34);
-            this.IDontKnowAnswer_Button.TabIndex = 3;
-            this.IDontKnowAnswer_Button.Text = "I Don\'t Know The Answer";
-            this.IDontKnowAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IDontKnowAnswer_Button.UseVisualStyleBackColor = false;
-            // 
             // FirstDigit_PictureBox
             // 
             this.FirstDigit_PictureBox.Image = global::WordTown.Properties.Resources._0;
@@ -189,6 +157,60 @@ namespace WordTown
             this.SecondDigit_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.SecondDigit_PictureBox.TabIndex = 1;
             this.SecondDigit_PictureBox.TabStop = false;
+            // 
+            // StartGame_Button
+            // 
+            this.StartGame_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
+            this.StartGame_Button.FlatAppearance.BorderSize = 0;
+            this.StartGame_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartGame_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StartGame_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
+            this.StartGame_Button.Image = global::WordTown.Properties.Resources.WordTown_StartIcon;
+            this.StartGame_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.StartGame_Button.Location = new System.Drawing.Point(33, 142);
+            this.StartGame_Button.Name = "StartGame_Button";
+            this.StartGame_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.StartGame_Button.Size = new System.Drawing.Size(730, 34);
+            this.StartGame_Button.TabIndex = 4;
+            this.StartGame_Button.Text = "Start The Game";
+            this.StartGame_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StartGame_Button.UseVisualStyleBackColor = false;
+            // 
+            // IDontKnowAnswer_Button
+            // 
+            this.IDontKnowAnswer_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
+            this.IDontKnowAnswer_Button.FlatAppearance.BorderSize = 0;
+            this.IDontKnowAnswer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IDontKnowAnswer_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.IDontKnowAnswer_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
+            this.IDontKnowAnswer_Button.Image = global::WordTown.Properties.Resources.WordTown_IDontKnowIcon;
+            this.IDontKnowAnswer_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IDontKnowAnswer_Button.Location = new System.Drawing.Point(403, 142);
+            this.IDontKnowAnswer_Button.Name = "IDontKnowAnswer_Button";
+            this.IDontKnowAnswer_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.IDontKnowAnswer_Button.Size = new System.Drawing.Size(360, 34);
+            this.IDontKnowAnswer_Button.TabIndex = 3;
+            this.IDontKnowAnswer_Button.Text = "I Don\'t Know The Answer";
+            this.IDontKnowAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IDontKnowAnswer_Button.UseVisualStyleBackColor = false;
+            // 
+            // SubmitAnswer_Button
+            // 
+            this.SubmitAnswer_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
+            this.SubmitAnswer_Button.FlatAppearance.BorderSize = 0;
+            this.SubmitAnswer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubmitAnswer_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SubmitAnswer_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
+            this.SubmitAnswer_Button.Image = global::WordTown.Properties.Resources.WordTown_SubmitAnswerIcon;
+            this.SubmitAnswer_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SubmitAnswer_Button.Location = new System.Drawing.Point(33, 142);
+            this.SubmitAnswer_Button.Name = "SubmitAnswer_Button";
+            this.SubmitAnswer_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.SubmitAnswer_Button.Size = new System.Drawing.Size(360, 34);
+            this.SubmitAnswer_Button.TabIndex = 2;
+            this.SubmitAnswer_Button.Text = "Submit Answer";
+            this.SubmitAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubmitAnswer_Button.UseVisualStyleBackColor = false;
             // 
             // Exit_Button
             // 
@@ -258,6 +280,8 @@ namespace WordTown
         private System.Windows.Forms.Button IDontKnowAnswer_Button;
         private System.Windows.Forms.Button SubmitAnswer_Button;
         private System.Windows.Forms.TextBox TurkishWord_TextBox;
+        private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.Button StartGame_Button;
     }
 }
 
