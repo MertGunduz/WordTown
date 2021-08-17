@@ -9,7 +9,7 @@ namespace WordTown
 
         public static void DatabaseInstantiate()
         {
-             oleDbConnection = new OleDbConnection(databaseString);
+            oleDbConnection = new OleDbConnection(databaseString);
         }
     }
 }
