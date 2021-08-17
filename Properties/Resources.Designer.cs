@@ -183,9 +183,29 @@ namespace WordTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WordTown_IDontKnowIcon {
+            get {
+                object obj = ResourceManager.GetObject("WordTown_IDontKnowIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WordTown_NonHoveredExitIcon {
             get {
                 object obj = ResourceManager.GetObject("WordTown_NonHoveredExitIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WordTown_SubmitAnswerIcon {
+            get {
+                object obj = ResourceManager.GetObject("WordTown_SubmitAnswerIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
