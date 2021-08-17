@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
 using WordTown.Properties;
 
@@ -13,14 +14,29 @@ namespace WordTown
 {
     public partial class WordTown_MainMenu : Form
     {
+        // Time Variables
         int totalTime = 90;
         string timeStringFormatted;
         string timeFirstDigit;
         string timeSecondDigit;
 
+        // Question Data
+        Random randomQuestion = new Random();
+        string englishWord;
+        string turkishWord;
+
+        // True & False Data
+        int trueAnswers = 0;
+        int falseAnswers = 0;
+        int iDontKnowAnswers = 0;
+
         public WordTown_MainMenu()
         {
             InitializeComponent();
+        }
+        private void WordTown_MainMenu_Load(object sender, EventArgs e)
+        {
+            DatabaseClass.DatabaseInstantiate();
         }
 
         private void Exit_Button_MouseEnter(object sender, EventArgs e)
@@ -38,10 +54,68 @@ namespace WordTown
             Application.Exit();
         }
 
+        private void TurkishWord_TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (TurkishWord_TextBox.Text == "  Turkish Word:")
+            {
+                TurkishWord_TextBox.Clear();
+            }
+        }
+
         private void StartGame_Button_Click(object sender, EventArgs e)
         {
             StartGame_Button.Visible = false;
+            FirstDigit_PictureBox.Visible = true;
             GameTimer.Start();
+
+            DatabaseClass.oleDbConnection.Open();
+            OleDbCommand takeQuestionCommand = new OleDbCommand("Select English_Word, Turkish_Word From Words_Table Where Word_ID = @p1", DatabaseClass.oleDbConnection);
+            takeQuestionCommand.Parameters.AddWithValue("p1", randomQuestion.Next(1, 2489));
+            OleDbDataReader oleDbDataReader = takeQuestionCommand.ExecuteReader();
+
+            while (oleDbDataReader.Read())
+            {
+                englishWord = oleDbDataReader[0].ToString();
+                turkishWord = oleDbDataReader[1].ToString();
+            }
+            oleDbDataReader.Close();
+            DatabaseClass.oleDbConnection.Close();
+
+            EnglishWord_TextBox.Text = englishWord;
+        }
+        private void SubmitAnswer_Button_Click(object sender, EventArgs e)
+        {
+            if (TurkishWord_TextBox.Text == turkishWord)
+            {
+                trueAnswers++;
+            }
+            else
+            {
+                falseAnswers++;
+            }
+
+            DatabaseClass.oleDbConnection.Open();
+            OleDbCommand takeQuestionCommand = new OleDbCommand("Select English_Word, Turkish_Word From Words_Table Where Word_ID = @p1", DatabaseClass.oleDbConnection);
+            takeQuestionCommand.Parameters.AddWithValue("p1", randomQuestion.Next(1, 2489));
+            OleDbDataReader oleDbDataReader = takeQuestionCommand.ExecuteReader();
+
+            while (oleDbDataReader.Read())
+            {
+                englishWord = oleDbDataReader[0].ToString();
+                turkishWord = oleDbDataReader[1].ToString();
+            }
+            oleDbDataReader.Close();
+            DatabaseClass.oleDbConnection.Close();
+
+            EnglishWord_TextBox.Text = englishWord;
+
+            TurkishWord_TextBox.Clear();
+        }
+
+        private void IDontKnowAnswer_Button_Click(object sender, EventArgs e)
+        {
+            iDontKnowAnswers++;
+            TurkishWord_TextBox.Clear();
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
@@ -55,11 +129,21 @@ namespace WordTown
             else
             {
                 GameTimer.Stop();
+                MessageBox.Show($"|-| WordTown |-|\n\nTrue Answers: {trueAnswers}\nFalse Answers: {falseAnswers}\nI Don't Knows: {iDontKnowAnswers}", "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             // Gets The Two Digits Of Time
-            timeSecondDigit = timeStringFormatted[0].ToString();
-            timeFirstDigit = timeStringFormatted[1].ToString();
+            if (totalTime >= 10)
+            {
+                timeSecondDigit = timeStringFormatted[0].ToString();
+                timeFirstDigit = timeStringFormatted[1].ToString();
+            }
+            else
+            {
+                FirstDigit_PictureBox.Visible = false;
+                timeSecondDigit = timeStringFormatted[0].ToString();
+            }
+
 
             // First Digit
             if (timeFirstDigit == "0")

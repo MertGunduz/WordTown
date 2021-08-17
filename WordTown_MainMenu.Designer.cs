@@ -35,21 +35,21 @@ namespace WordTown
             this.Left_Border = new System.Windows.Forms.Panel();
             this.Right_Border = new System.Windows.Forms.Panel();
             this.Mid_Panel = new System.Windows.Forms.Panel();
-            this.Container_Panel = new System.Windows.Forms.Panel();
-            this.EnglishWord_TextBox = new System.Windows.Forms.TextBox();
-            this.TurkishWord_TextBox = new System.Windows.Forms.TextBox();
-            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.FirstDigit_PictureBox = new System.Windows.Forms.PictureBox();
             this.SecondDigit_PictureBox = new System.Windows.Forms.PictureBox();
+            this.Container_Panel = new System.Windows.Forms.Panel();
             this.StartGame_Button = new System.Windows.Forms.Button();
             this.IDontKnowAnswer_Button = new System.Windows.Forms.Button();
             this.SubmitAnswer_Button = new System.Windows.Forms.Button();
+            this.TurkishWord_TextBox = new System.Windows.Forms.TextBox();
+            this.EnglishWord_TextBox = new System.Windows.Forms.TextBox();
             this.Exit_Button = new System.Windows.Forms.Button();
             this.Header_PictureBox = new System.Windows.Forms.PictureBox();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.Mid_Panel.SuspendLayout();
-            this.Container_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FirstDigit_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondDigit_PictureBox)).BeginInit();
+            this.Container_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Header_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,46 +103,6 @@ namespace WordTown
             this.Mid_Panel.Size = new System.Drawing.Size(796, 295);
             this.Mid_Panel.TabIndex = 3;
             // 
-            // Container_Panel
-            // 
-            this.Container_Panel.Controls.Add(this.StartGame_Button);
-            this.Container_Panel.Controls.Add(this.IDontKnowAnswer_Button);
-            this.Container_Panel.Controls.Add(this.SubmitAnswer_Button);
-            this.Container_Panel.Controls.Add(this.TurkishWord_TextBox);
-            this.Container_Panel.Controls.Add(this.EnglishWord_TextBox);
-            this.Container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Container_Panel.Location = new System.Drawing.Point(0, 90);
-            this.Container_Panel.Name = "Container_Panel";
-            this.Container_Panel.Size = new System.Drawing.Size(796, 205);
-            this.Container_Panel.TabIndex = 2;
-            // 
-            // EnglishWord_TextBox
-            // 
-            this.EnglishWord_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
-            this.EnglishWord_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EnglishWord_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
-            this.EnglishWord_TextBox.Location = new System.Drawing.Point(33, 28);
-            this.EnglishWord_TextBox.Name = "EnglishWord_TextBox";
-            this.EnglishWord_TextBox.Size = new System.Drawing.Size(730, 27);
-            this.EnglishWord_TextBox.TabIndex = 0;
-            this.EnglishWord_TextBox.Text = "  English Word:";
-            // 
-            // TurkishWord_TextBox
-            // 
-            this.TurkishWord_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
-            this.TurkishWord_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TurkishWord_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
-            this.TurkishWord_TextBox.Location = new System.Drawing.Point(33, 85);
-            this.TurkishWord_TextBox.Name = "TurkishWord_TextBox";
-            this.TurkishWord_TextBox.Size = new System.Drawing.Size(730, 27);
-            this.TurkishWord_TextBox.TabIndex = 1;
-            this.TurkishWord_TextBox.Text = "  Turkish Word:";
-            // 
-            // GameTimer
-            // 
-            this.GameTimer.Interval = 1000;
-            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
-            // 
             // FirstDigit_PictureBox
             // 
             this.FirstDigit_PictureBox.Image = global::WordTown.Properties.Resources._0;
@@ -162,6 +122,19 @@ namespace WordTown
             this.SecondDigit_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.SecondDigit_PictureBox.TabIndex = 1;
             this.SecondDigit_PictureBox.TabStop = false;
+            // 
+            // Container_Panel
+            // 
+            this.Container_Panel.Controls.Add(this.StartGame_Button);
+            this.Container_Panel.Controls.Add(this.IDontKnowAnswer_Button);
+            this.Container_Panel.Controls.Add(this.SubmitAnswer_Button);
+            this.Container_Panel.Controls.Add(this.TurkishWord_TextBox);
+            this.Container_Panel.Controls.Add(this.EnglishWord_TextBox);
+            this.Container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Container_Panel.Location = new System.Drawing.Point(0, 90);
+            this.Container_Panel.Name = "Container_Panel";
+            this.Container_Panel.Size = new System.Drawing.Size(796, 205);
+            this.Container_Panel.TabIndex = 2;
             // 
             // StartGame_Button
             // 
@@ -199,6 +172,7 @@ namespace WordTown
             this.IDontKnowAnswer_Button.Text = "I Don\'t Know The Answer";
             this.IDontKnowAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.IDontKnowAnswer_Button.UseVisualStyleBackColor = false;
+            this.IDontKnowAnswer_Button.Click += new System.EventHandler(this.IDontKnowAnswer_Button_Click);
             // 
             // SubmitAnswer_Button
             // 
@@ -217,6 +191,30 @@ namespace WordTown
             this.SubmitAnswer_Button.Text = "Submit Answer";
             this.SubmitAnswer_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SubmitAnswer_Button.UseVisualStyleBackColor = false;
+            this.SubmitAnswer_Button.Click += new System.EventHandler(this.SubmitAnswer_Button_Click);
+            // 
+            // TurkishWord_TextBox
+            // 
+            this.TurkishWord_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
+            this.TurkishWord_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TurkishWord_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
+            this.TurkishWord_TextBox.Location = new System.Drawing.Point(33, 85);
+            this.TurkishWord_TextBox.Name = "TurkishWord_TextBox";
+            this.TurkishWord_TextBox.Size = new System.Drawing.Size(730, 27);
+            this.TurkishWord_TextBox.TabIndex = 1;
+            this.TurkishWord_TextBox.Text = "  Turkish Word:";
+            this.TurkishWord_TextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TurkishWord_TextBox_MouseClick);
+            // 
+            // EnglishWord_TextBox
+            // 
+            this.EnglishWord_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(61)))), ((int)(((byte)(159)))));
+            this.EnglishWord_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EnglishWord_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(98)))), ((int)(((byte)(213)))));
+            this.EnglishWord_TextBox.Location = new System.Drawing.Point(33, 28);
+            this.EnglishWord_TextBox.Name = "EnglishWord_TextBox";
+            this.EnglishWord_TextBox.Size = new System.Drawing.Size(730, 27);
+            this.EnglishWord_TextBox.TabIndex = 0;
+            this.EnglishWord_TextBox.Text = "  English Word:";
             // 
             // Exit_Button
             // 
@@ -245,6 +243,11 @@ namespace WordTown
             this.Header_PictureBox.TabIndex = 0;
             this.Header_PictureBox.TabStop = false;
             // 
+            // GameTimer
+            // 
+            this.GameTimer.Interval = 1000;
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
+            // 
             // WordTown_MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -260,11 +263,12 @@ namespace WordTown
             this.Name = "WordTown_MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WordTown";
+            this.Load += new System.EventHandler(this.WordTown_MainMenu_Load);
             this.Mid_Panel.ResumeLayout(false);
-            this.Container_Panel.ResumeLayout(false);
-            this.Container_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FirstDigit_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondDigit_PictureBox)).EndInit();
+            this.Container_Panel.ResumeLayout(false);
+            this.Container_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Header_PictureBox)).EndInit();
             this.ResumeLayout(false);
 
