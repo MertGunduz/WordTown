@@ -116,6 +116,23 @@ namespace WordTown
         {
             iDontKnowAnswers++;
             TurkishWord_TextBox.Clear();
+
+            DatabaseClass.oleDbConnection.Open();
+            OleDbCommand takeQuestionCommand = new OleDbCommand("Select English_Word, Turkish_Word From Words_Table Where Word_ID = @p1", DatabaseClass.oleDbConnection);
+            takeQuestionCommand.Parameters.AddWithValue("p1", randomQuestion.Next(1, 2489));
+            OleDbDataReader oleDbDataReader = takeQuestionCommand.ExecuteReader();
+
+            while (oleDbDataReader.Read())
+            {
+                englishWord = oleDbDataReader[0].ToString();
+                turkishWord = oleDbDataReader[1].ToString();
+            }
+            oleDbDataReader.Close();
+            DatabaseClass.oleDbConnection.Close();
+
+            EnglishWord_TextBox.Text = englishWord;
+
+            TurkishWord_TextBox.Clear();
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
