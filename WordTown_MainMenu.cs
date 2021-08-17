@@ -26,9 +26,9 @@ namespace WordTown
         string turkishWord;
 
         // True & False Data
-        int trueAnswers = 0;
-        int falseAnswers = 0;
-        int iDontKnowAnswers = 0;
+        int trueAnswers;
+        int falseAnswers;
+        int iDontKnowAnswers;
 
         public WordTown_MainMenu()
         {
@@ -64,6 +64,12 @@ namespace WordTown
 
         private void StartGame_Button_Click(object sender, EventArgs e)
         {
+            // Sets To Zero When Starting Program
+            trueAnswers = 0;
+            falseAnswers = 0;
+            iDontKnowAnswers = 0;
+            totalTime = 90;
+
             StartGame_Button.Visible = false;
             FirstDigit_PictureBox.Visible = true;
             GameTimer.Start();
