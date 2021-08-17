@@ -5,7 +5,7 @@
 ☉ Operating System: Windows <br>
 ☉ Database: Microsoft Access <br>
 
-<i>With "WordTown", you can test your own English and learn new words all the time.</i>
+<i>With "WordTown", you can test your own English and learn new Turkish words all the time.</i>
 
 ## WordTown Start Menu
 
