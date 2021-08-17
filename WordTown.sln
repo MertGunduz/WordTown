@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTown", "WordTown.csproj", "{02771F03-DD0F-47E7-B495-F0B478C6F211}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02771F03-DD0F-47E7-B495-F0B478C6F211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02771F03-DD0F-47E7-B495-F0B478C6F211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02771F03-DD0F-47E7-B495-F0B478C6F211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02771F03-DD0F-47E7-B495-F0B478C6F211}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EC68051-B0A8-436C-8B58-172B199626AF}
+	EndGlobalSection
+EndGlobal
