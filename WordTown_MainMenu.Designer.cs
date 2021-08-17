@@ -138,6 +138,11 @@ namespace WordTown
             this.TurkishWord_TextBox.TabIndex = 1;
             this.TurkishWord_TextBox.Text = "  Turkish Word:";
             // 
+            // GameTimer
+            // 
+            this.GameTimer.Interval = 1000;
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
+            // 
             // FirstDigit_PictureBox
             // 
             this.FirstDigit_PictureBox.Image = global::WordTown.Properties.Resources._0;
@@ -175,6 +180,7 @@ namespace WordTown
             this.StartGame_Button.Text = "Start The Game";
             this.StartGame_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StartGame_Button.UseVisualStyleBackColor = false;
+            this.StartGame_Button.Click += new System.EventHandler(this.StartGame_Button_Click);
             // 
             // IDontKnowAnswer_Button
             // 
